@@ -21,11 +21,11 @@ end
 x = zeros(1,n-1);
 
 for i=m:-1:1
-    c=0;
+    y=0;
     for j=2:m
-        c=c+a(i,j)*x(j);
+        y=y+a(i,j)*x(j);
     end
-    x(i)=(a(i,n)-c)/a(i,i);
+    x(i)=(a(i,n)-y)/a(i,i);
 end
 
 a
