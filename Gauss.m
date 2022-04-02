@@ -14,18 +14,18 @@ for i=1:m-1
     end
     
     for j=i+1:m
-        a(j,:) = (a(j,i)/a(i,i))*a(i,:)-a(j,:);
+        a(j,:) = (a(j,i)/a(i,i))*(-a(i,:))+a(j,:);
     end
 end
 
 x = zeros(1,n-1);
 
 for i=m:-1:1
-    y=0;
+    c=0;
     for j=2:m
-        y=y+a(i,j)*x(j);
+        c=c+a(i,j)*x(j);
     end
-    x(i)=(a(i,n)-y)/a(i,i);
+    x(i)=(a(i,n)-c)/a(i,i);
 end
 
 a
